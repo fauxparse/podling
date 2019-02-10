@@ -1,0 +1,16 @@
+Metrics/LineLength:
+  Max: 100
+  AllowURI: true
+  IgnoredPatterns:
+    - '\A\s*#'
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/Documentation:
+  Enabled: false
+
+Style/MixinUsage:
+  Exclude:
+    - 'spec/example/bin/*'
