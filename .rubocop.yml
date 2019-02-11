@@ -3,9 +3,12 @@ AllCops:
   Exclude:
     - '.git/**/*'
     - 'bin/*'
-    - 'db/schema.rb'
+    - 'spec/example/db/schema.rb'
     - 'node_modules/**/*'
     - 'vendor/**/*'
+
+Metrics/AbcSize:
+  Enabled: false
 
 Metrics/BlockLength:
   Exclude:
@@ -17,6 +20,10 @@ Metrics/LineLength:
   AllowURI: true
   IgnoredPatterns:
     - '\A\s*#'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'spec/**/*'
 
 Style/BlockComments:
   Exclude:

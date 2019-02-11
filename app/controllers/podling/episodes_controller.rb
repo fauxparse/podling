@@ -4,25 +4,20 @@ module Podling
   class EpisodesController < ApplicationController
     before_action :set_episode, only: %i[show edit update destroy]
 
-    # GET /episodes
     def index
-      @episodes = Episode.all
+      @episodes = Podling.episode_class.latest_first.all
     end
 
-    # GET /episodes/1
     def show; end
 
-    # GET /episodes/new
     def new
-      @episode = Episode.new
+      @episode = Podling.episode_class.new
     end
 
-    # GET /episodes/1/edit
     def edit; end
 
-    # POST /episodes
     def create
-      @episode = Episode.new(episode_params)
+      @episode = Podling.episode_class.new(episode_params)
 
       if @episode.save
         redirect_to @episode, notice: 'Episode was successfully created.'
@@ -31,7 +26,6 @@ module Podling
       end
     end
 
-    # PATCH/PUT /episodes/1
     def update
       if @episode.update(episode_params)
         redirect_to @episode, notice: 'Episode was successfully updated.'
@@ -40,7 +34,6 @@ module Podling
       end
     end
 
-    # DELETE /episodes/1
     def destroy
       @episode.destroy
       redirect_to episodes_url, notice: 'Episode was successfully destroyed.'
@@ -48,14 +41,14 @@ module Podling
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_episode
-      @episode = Episode.find(params[:id])
+      @episode = Podling.episode_class.find(params[:id])
     end
 
-    # Only allow a trusted parameter "white list" through.
     def episode_params
-      params.require(:episode).permit(:title, :description, :published_at, :deleted_at)
+      params
+        .require(:episode)
+        .permit(:title, :description, :audio, :published_at, :deleted_at)
     end
   end
 end

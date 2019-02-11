@@ -1,9 +1,11 @@
 module Podling
   class Episode < ApplicationRecord
+    has_one_attached :audio
+
     validates :title, presence: true
 
-    def self.by_publication_time
-      order(published_at: :asc)
+    def self.latest_first
+      order(published_at: :desc)
     end
 
     def self.published

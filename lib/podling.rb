@@ -1,5 +1,9 @@
 require 'podling/engine'
 
 module Podling
-  # Your code goes here...
+  mattr_accessor :episode_class
+
+  def self.episode_class
+    @@episode_class || Episode
+  end
 end
