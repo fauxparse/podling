@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Podling::Engine => '/podling'
+  mount Podling::Engine => '/'
 end

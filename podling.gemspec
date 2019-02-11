@@ -38,4 +38,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'rspec-rails', '~> 3.8.2'
   spec.add_development_dependency 'rubocop', '~> 0.64.0'
+  spec.add_development_dependency 'shoulda-matchers', '~> 4.0.0.rc1'
 end
