@@ -1,0 +1,34 @@
+<%= form_with(model: episode, local: true, class: 'episode-form') do |form| %>
+  <% if episode.errors.any? %>
+    <div class="episode-form__errors">
+      <h2><%= pluralize(episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
+
+      <ul>
+        <% episode.errors.full_messages.each do |message| %>
+          <li class="episode-form__error"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="episode-form__field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="episode-form__field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="episode-form__field">
+    <%= form.label :publish do %>
+      <%= form.check_box :publish %>
+      Publish?
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
