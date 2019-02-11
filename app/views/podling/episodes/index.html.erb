@@ -8,19 +8,17 @@
       <th>Title</th>
       <th>Description</th>
       <th>Published at</th>
-      <th>Deleted at</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @episodes.each do |episode| %>
+    <% episodes.each do |episode| %>
       <tr>
         <td><%= episode.title %></td>
         <td><%= episode.description %></td>
-        <td><%= episode.published_at %></td>
-        <td><%= episode.deleted_at %></td>
-        <td><%= link_to 'Show', episode %></td>
+        <td><%= episode.published_at if episode.published? %></td>
+        <td><%= link_to 'Show', episode if episode.published? %></td>
         <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
         <td><%= link_to 'Destroy', episode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

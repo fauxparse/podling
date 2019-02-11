@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.test_files = Dir['spec/**/*']
 
   spec.add_dependency 'rails', '~> 5.2.2'
+  spec.add_dependency 'wannabe_bool', '~> 0.7.1'
 
   spec.add_development_dependency 'pg'
   spec.add_development_dependency 'rspec-rails', '~> 3.8.2'

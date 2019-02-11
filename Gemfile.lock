@@ -3,6 +3,7 @@ PATH
   specs:
     podling (0.1.0)
       rails (~> 5.2.2)
+      wannabe_bool (~> 0.7.1)
 
 GEM
   remote: https://rubygems.org/
@@ -149,6 +150,7 @@ GEM
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unicode-display_width (1.4.1)
+    wannabe_bool (0.7.1)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)

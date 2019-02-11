@@ -46,4 +46,14 @@ RSpec.describe Podling::Episode do
       it { is_expected.to include episode }
     end
   end
+
+  context 'with publish set' do
+    before { episode.publish = true }
+
+    it 'publishes on create' do
+      expect { episode.save! }
+        .to change { Podling::Episode.count }.by(1)
+        .and change { Podling::Episode.published.count }.by(1)
+    end
+  end
 end

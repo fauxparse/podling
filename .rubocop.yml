@@ -7,6 +7,10 @@ AllCops:
     - 'node_modules/**/*'
     - 'vendor/**/*'
 
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - 'spec/**/*'
+
 Metrics/AbcSize:
   Enabled: false
 

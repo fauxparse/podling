@@ -1,24 +1,12 @@
-<p id="notice"><%= notice %></p>
+<%= render 'flash' %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @episode.title %>
-</p>
+<article class="episode episode--full">
+  <%= content_tag :h1, episode.title, class: 'episode__title' %>
+  <%= content_tag :div, episode.description, class: 'episode__description' %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @episode.description %>
-</p>
+  <div className="episode__meta">
+    <%= l episode.published_at %>
+  </div>
+</article>
 
-<p>
-  <strong>Published at:</strong>
-  <%= @episode.published_at %>
-</p>
-
-<p>
-  <strong>Deleted at:</strong>
-  <%= @episode.deleted_at %>
-</p>
-
-<%= link_to 'Edit', edit_episode_path(@episode) %> |
 <%= link_to 'Back', episodes_path %>
