@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Podling</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= javascript_include_tag '//cdn.muicss.com/mui-0.9.41/js/mui.min.js' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <main class="mui-container-fluid">
+      <%= yield %>
+
+      <footer class="mui--divider-top">
+        <p class="mui-text-caption">Powered by <%= link_to 'Podling', 'https://github.com/fauxparse/podling' %></p>
+      </footer>
+    </main>
+  </body>
+</html>

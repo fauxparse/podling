@@ -1,0 +1,12 @@
+<%= content_tag :article, class: 'episode mui--divider-top', id: dom_id(episode) do %>
+  <p class="episode__date mui--text-body1"><%= l episode.published_at.to_date %></p>
+  <h2 class="episode__title mui--text-headline"><%= link_to episode.title, episode %></h2>
+  <% if episode.audio.attached? %>
+    <%= content_tag :audio, src: main_app.url_for(episode.audio), controls: true, class: 'episode__audio' do %>
+      Your browser does not support the <code>audio</code> element.
+    <% end %>
+  <% end %>
+  <div class="episode__description mui--text-body1">
+    <%= episode.description %>
+  </div>
+<% end %>

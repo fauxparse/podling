@@ -3,6 +3,8 @@ require_dependency 'podling/application_controller'
 module Podling
   module Admin
     class EpisodesController < Podling::ApplicationController
+      layout '/application'
+
       def index; end
 
       def show; end

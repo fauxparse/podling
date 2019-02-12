@@ -1,0 +1,6 @@
+<li class="mui--divider-top">
+  <%= link_to edit_admin_episode_path(episode), class: 'episode--link' do %>
+    <%= content_tag :span, episode.title, class: 'episode--link__title' %>
+    <%= content_tag :span, episode.published? ? l(episode.published_at) : 'Unpublished', class: 'episode--link__date' %>
+  <% end %>
+</li>

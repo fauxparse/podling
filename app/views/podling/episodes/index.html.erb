@@ -1,9 +1,9 @@
-<p id="notice"><%= notice %></p>
+<header>
+  <%= render '/podling/episodes/flash' %>
 
-<h1>Episodes</h1>
+  <h1 class="mui--text-display3">Episodes</h1>
+</header>
 
-<ul>
-  <% episodes.each do |episode| %>
-    <li><%= link_to episode.title, episode %></li>
-  <% end %>
-</ul>
+<section class="episodes">
+  <%= render episodes %>
+</section>

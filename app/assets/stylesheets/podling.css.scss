@@ -1,0 +1,72 @@
+$accent: #EB5D84 !default;
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import url('https://cdn.muicss.com/mui-0.9.41/css/mui.min.css');
+
+body {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+main {
+  width: 100%;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+header {
+  border-top: 0.5rem solid $accent;
+}
+
+.episodes {
+  margin-top: 2rem;
+
+  &--list {
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.episode {
+  padding: 0.5rem 0 2rem;
+
+  &__date {
+    margin: 0;
+    opacity: 0.75;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__audio {
+    display: block;
+    margin: 1rem auto;
+  }
+
+  &--link {
+    display: block;
+    padding: 0.5rem 0;
+    color: inherit;
+
+    &:hover {
+      text-decoration: none;
+      color: hsl(207, 100%, 35%);
+      background-color: hsl(207, 50%, 95%);
+    }
+
+    &__title {
+      display: block;
+      font-size: 1rem;
+    }
+
+    &__date {
+      display: block;
+      opacity: 0.75;
+    }
+  }
+}
+
+footer {
+  padding: 0.5rem 0 2rem;
+}

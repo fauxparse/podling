@@ -4,6 +4,8 @@ module Podling
   class EpisodesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
+    layout '/application'
+
     def index; end
 
     def show; end

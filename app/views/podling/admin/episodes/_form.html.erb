@@ -1,4 +1,4 @@
-<%= form_with(model: episode, local: true, class: 'episode-form') do |form| %>
+<%= form_with(model: episode, local: true, class: 'episode-form', url: episode.persisted? ? admin_episode_path(episode) : admin_episodes_path) do |form| %>
   <% if episode.errors.any? %>
     <div class="episode-form__errors">
       <h2><%= pluralize(episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
@@ -19,6 +19,11 @@
   <div class="episode-form__field">
     <%= form.label :description %>
     <%= form.text_area :description %>
+  </div>
+
+  <div class="episode-form__field">
+    <%= form.label :audio %>
+    <%= form.file_field :audio %>
   </div>
 
   <div class="episode-form__field">
