@@ -6,6 +6,8 @@ module Podling
 
     validates :title, presence: true
 
+    before_save :calculate_duration, unless: :duration?
+
     def self.latest_first
       order(published_at: :desc)
     end
@@ -50,6 +52,14 @@ module Podling
     def delete!
       update!(deleted_at: Time.now)
       self
+    end
+
+    private
+
+    def calculate_duration
+      return unless audio.attached?
+
+      self.duration = Podling::AudioDuration.new(audio.blob).duration
     end
   end
 end

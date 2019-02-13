@@ -4,6 +4,7 @@ PATH
     podling (0.1.0)
       rails (~> 5.2.2)
       sass-rails (~> 5.0)
+      taglib-ruby
       wannabe_bool (~> 0.7.1)
 
 GEM
@@ -161,6 +162,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    taglib-ruby (0.7.1)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
